@@ -27,7 +27,7 @@ void reverseArray(string *str)
     string temp;
     for (int i = 0; i < SIZE; i++)
     {
-        temp = *(str + SIZE - i);
+        temp = *(str + (SIZE - (i+1)));
         *(str + i) = temp;
     }
 }
