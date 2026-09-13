@@ -17,7 +17,19 @@ int main()
     string *nameList = new string[SIZE];
     nameList = names;
 
+    reverseArray(nameList);
     displayArray(nameList);
+}
+
+//Define reverseArray()
+void reverseArray(string *str)
+{
+    string temp;
+    for (int i = 0; i < SIZE; i++)
+    {
+        temp = *(str + SIZE - i);
+        *(str + i) = temp;
+    }
 }
 
 //Define displayArray()
@@ -26,7 +38,9 @@ void displayArray(string *str)
     //Use a nested loop to print out the array elements
     for (int i = 0; i < SIZE; i++)
     {
+        //Print out the element
         cout << *(str + i);
+        //if the array size is smaller than SIZE - 1, put a comma between the names
         if (i < SIZE - 1) cout << ", ";
     }
 }
